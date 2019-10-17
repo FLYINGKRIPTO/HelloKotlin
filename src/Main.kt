@@ -111,4 +111,65 @@ fun main() {
     println(mySet)
     println(mySet.size)
 
+
+    /** MAPS **/
+    val myHashMap  = HashMap<String,String>()
+    myHashMap.put("name","James")
+    myHashMap.put("Instrument","Guitar")
+
+    println(myHashMap["Instrument"])
+    println(myHashMap["name"])
+    println(myHashMap.keys)
+    println(myHashMap.values)
+    println(myHashMap.entries)
+    println(myHashMap.size)
+
+    /** SWITCH WHEN */
+     val day = 1
+     var dayString = " "
+    dayString = when(day){
+        1 -> " MONDAY "
+        2 -> " TUESDAY "
+        3 -> " WEDNESDAY"
+        4 -> " Thursday"
+        5 -> " FRIDAY"
+        else -> "Sunday "
+    }
+
+    println(dayString)
+
+    /** LOOPS */
+
+    val myNumbers = intArrayOf(12,33,54,65,643,432,443)
+    val q = myNumbers[0]/3 * 5
+    println(q)
+
+    println("FOR LOOP")
+    for (number in myNumbers){
+        val z = number/3 * 5
+        println(z)
+    }
+
+    println("FOR LOOP INDICES ")
+    for(i in myNumbers.indices){
+        val y  = myNumbers[i]/3 * 5
+        println(y)
+    }
+
+    println("FOR Loop another approach")
+    for(i in 0..9){
+        println(i)
+    }
+
+    /** WHILE LOOP */
+    println("WHILE LOOP")
+
+    var  j  = 0
+    while(j<10){
+        val t = j*10/5*12
+        println(t)
+        j++
+    }
+
+
 }
