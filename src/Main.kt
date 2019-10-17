@@ -69,7 +69,7 @@ fun main() {
     for(index in decreasingRange){
         println(index)
     }
-*/
+
 
     /** Array */
     val myArray  = arrayOfNulls<String>(4)
@@ -138,6 +138,17 @@ fun main() {
 
     println(dayString)
 
+    /** Using ranges in when */
+    val age = 19
+    val ageGroup = when(age){
+        in 0..2 -> " Infant "
+        in 3..12 -> " Child"
+        in 13..20 -> "Teen"
+        in 20..40 -> "Adult"
+        else -> " Unknown "
+    }
+    println(ageGroup)
+
     /** LOOPS */
 
     val myNumbers = intArrayOf(12,33,54,65,643,432,443)
@@ -161,15 +172,69 @@ fun main() {
         println(i)
     }
 
+    /** factorial using for loop */
+    val input = 5
+    var factorial  = 1
+
+    for (index in 1..input){
+        factorial *= index
+    }
+
+    println("Factorial of $input is $factorial" )
     /** WHILE LOOP */
     println("WHILE LOOP")
 
     var  j  = 0
     while(j<10){
         val t = j*10/5*12
-        println(t)
+        //println(t)
         j++
     }
+*/
+    test()
+    test2(3,5)
+   val sun = add(5,9)
+    println("SUM IS $sun")
+
+    /** Assign a function to a variable*/
+    var addfunction= ::add
+    addfunction(4,6)
+    displayResult(addfunction,5,77)
+    var squareMyNum = ::square
+    squareMyNum(4)
+
+    var subtract = ::suntract
+    subtract(5 ,3)
+    displayResult(subtract,5,3)
+
 
 
 }
+fun  displayResult(operate: (Int,Int) -> Int,a: Int,b: Int ) {
+
+    val result  = operate(a,b)
+     println("HERE RESULT IS  ->>>>> $result")
+}
+fun add(a: Int,b: Int) : Int  {
+    println("Function with return type")
+    return  a+b
+}
+fun suntract(a: Int,b: Int): Int{
+    return a-b
+}
+fun square(a : Int) : Int{
+    return a*a
+}
+fun test() {
+    println("IN FUNCTION CLASS")
+    val x = 5 *10
+    println(x)
+}
+
+fun test2(a: Int ,b : Int){
+    println("Function with parameters")
+    println(a*b)
+}
+
+
+
